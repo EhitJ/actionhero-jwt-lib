@@ -1,0 +1,57 @@
+{
+  "author": "jitendra yadav",
+  "name": "@ehit-j/ehitj_jwt_lib",
+  "description": "ehitj_jwt_lib",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "actionhero": "22.0.9",
+    "jsonwebtoken": "^8.5.1",
+    "winston": "latest",
+    "ws": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/jest": "latest",
+    "jest": "latest",
+    "prettier": "latest",
+    "ts-jest": "latest",
+    "ts-node-dev": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "postinstall": "npm run build",
+    "dev": "ts-node-dev --no-deps --transpile-only ./src/server",
+    "debug": "tsc && ts-node-dev --transpile-only --no-deps --inspect -- ./src/server ",
+    "start": "node ./dist/server.js",
+    "actionhero": "actionhero",
+    "test": "jest",
+    "pretest": "npm run build && npm run lint",
+    "build": "tsc --sourceMap false --declaration",
+    "lint": "prettier --check src/*/** __tests__/*/**",
+    "pretty": "prettier --write src/*/** __tests__/*/**"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EhitJ/actionhero-jwt-lib.git"
+  },
+  "keywords": [
+    "actionhero",
+    "jwt",
+    "auth"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EhitJ/actionhero-jwt-lib/issues"
+  },
+  "homepage": "https://github.com/EhitJ/actionhero-jwt-lib#readme"
+}
